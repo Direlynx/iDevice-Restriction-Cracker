@@ -4,28 +4,32 @@ Cracks the iOS restrictions passcode. It works on any iOS device, be it the iPho
 
 ## Install
 
-I've included a handy dandy install script (install_idrc) that checks for and installs the necessary dependencies. You may need to change the permissions of the script in order for it to function, like so:
-```shell
+I've included a handy dandy install script (```install_idrc```) that checks for and installs the necessary dependencies. You may need to change the permissions of the installer in order for it to function, like so:
+```
 cd /path/to/install_idrc
 chmod +x install_idrc
 ```
-
-While idrc is able to be run from anywhere, install_idrc by default installs it to /usr/local/bin so that it works as a terminal command.
+While ```idrc``` is able to be run from anywhere, ```install_idrc``` by default installs it to /usr/local/bin so that it works as a terminal command.
 
 ## Requirements
 
 _Mac OS X only! This will do NOTHING on Windows or Linux, as the file paths are different!_
 
-An account of at least administrator permissions level. Must be able to use `sudo`.
-Xcode Command Line Tools
-[App::cpanminus](http://search.cpan.org/~miyagawa/App-cpanminus-1.7040/lib/App/cpanminus.pm)
-[Crypt::PBKDF2](http://search.cpan.org/~arodland/Crypt-PBKDF2-0.150900/lib/Crypt/PBKDF2.pm)
+1. An account of at least administrator permissions level. Must be able to use `sudo`.
+2. Xcode Command Line Tools
+3. [App::cpanminus](http://search.cpan.org/~miyagawa/App-cpanminus-1.7040/lib/App/cpanminus.pm)
+4. [Crypt::PBKDF2](http://search.cpan.org/~arodland/Crypt-PBKDF2-0.150900/lib/Crypt/PBKDF2.pm)
+
+## Warning
+
+This project was a fun way to crack the forgotten restrictions password on my old iPod Touch. If you are a 5th grader looking to be a **xXxSooperHaxor420xXx** then you can ask your parents' permission to go back to [Disney.com](https://www.Disney.com).
+
 
 ## Instructions
 
 1. Read the section titled "Install" in this readme
 2. Sync the restricted device to iTunes
-3. open Terminal.app and enter `idrc`
+3. open /Applications/Utilities/Terminal.app and enter `idrc`
 4. Wait ~5 seconds
 5. ???
-6. Profit
+6. Profit!
