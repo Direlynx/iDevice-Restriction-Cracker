@@ -1,0 +1,27 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+print "\n\n------------------------------------------------------------------------------\n";
+print "|****************************************************************************|\n";
+print "|***           iDRC is Mac only. It WILL fail on any other OS.            ***|\n";
+print "|***       This script will only work with a sudo-capable account.        ***|\n";
+print "|****************************************************************************|\n";
+print "------------------------------------------------------------------------------\n\n";
+
+my $xcode_val = system "xcode-select -p 1>/dev/null";
+if ($xcode_val != "0") {system "xcode-select --install"}
+
+my $cpanm_installed = system "perl -MApp::cpanminus -e 1";
+if ($cpanm_installed != "0") {system "curl -L https://cpanmin.us | perl - --sudo App::cpanminus"}
+
+my $crypt_installed = system "perl -MCrypt::PBKDF2 -e 1";
+if ($crypt_installed != "0") {system "cpanm Crypt::PBKDF2"}
+
+chdir "/usr/local/bin";
+system "sudo curl -O https://www.dropbox.com/s/d51oa67abz60cxr/idrc.pl?dl=1";
+
+system "sudo chmod +x idrc";
+print "\n\niDevice Restriction Cracker is installed! Now just back up your restricted device to iTunes and enter 'idrc' into Terminal.app\n\n";
+exit 0;
