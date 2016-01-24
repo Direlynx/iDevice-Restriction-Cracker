@@ -20,7 +20,7 @@ my $crypt_installed = system "perl -MCrypt::PBKDF2 -e 1";
 if ($crypt_installed != "0") {system "cpanm Crypt::PBKDF2"}
 
 chdir "/usr/local/bin";
-system "sudo curl -O https://www.dropbox.com/s/d51oa67abz60cxr/idrc.pl?dl=1";
+system "sudo curl -O https://www.dropbox.com/s/0wuqf3rt5vzr0w8/idrc?dl=1";
 
 system "sudo chmod +x idrc";
 print "\n\niDevice Restriction Cracker is installed! Now just back up your restricted device to iTunes and enter 'idrc' into Terminal.app\n\n";
