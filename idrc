@@ -17,8 +17,7 @@ $plisthash = substr($plisthash, 0, -40);
 my $plistsalt = substr($plistdump, 99);
 $plistsalt = substr($plistsalt, 0, -2);
 
-if (length($plisthash) != 40) {die "Decryption Error\n"}
-if (length($plistsalt) != 8) {die "Decryption Error\n"}
+if (length($plisthash) != 40 || length($plistsalt) != 8) {die "Decryption Error\n"}
 
 my $match = pack("H*", $plisthash);
 my $pbkdf2 = Crypt::PBKDF2->new (hash_class => 'HMACSHA1', iterations => 1000);
