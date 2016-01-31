@@ -6,30 +6,34 @@ use Crypt::PBKDF2;
 
 print "Decrypting...";
 chdir "$ENV{HOME}/Library/Application Support/MobileSync/Backup";
-my $BUpath = substr(`ls -1dt */ | head -n 1`, 0, -2);
+my $BUpath = substr( `ls -1dt */ | head -n 1`, 0, -2 );
 chdir "$BUpath";
 my $targetfile = "398bc9c2*";
 
 my $plistdump = `plutil -p $targetfile`;
 $plistdump =~ s/\s//g;
-my $plisthash = substr($plistdump, 29);
-$plisthash = substr($plisthash, 0, -40);
-my $plistsalt = substr($plistdump, 99);
-$plistsalt = substr($plistsalt, 0, -2);
+my $plisthash = substr( $plistdump, 29 );
+$plisthash = substr( $plisthash, 0, -40 );
+my $plistsalt = substr( $plistdump, 99 );
+$plistsalt = substr( $plistsalt, 0, -2 );
 
-if (length($plisthash) != 40 || length($plistsalt) != 8) {die "Decryption Error\n"}
+if ( length($plisthash) != 40 || length($plistsalt) != 8 ) {die "Decryption Error\n"}
 
-my $match = pack("H*", $plisthash);
-my $pbkdf2 = Crypt::PBKDF2->new (hash_class => 'HMACSHA1', iterations => 1000);
-for (my $num = 0; $num < 5000; $num++) {
-   my $hash = $pbkdf2->PBKDF2(my $salt = pack("H*", $plistsalt), my $pass = sprintf("%04d", $num));
-   if ($match eq $hash) {
+my $match = pack( "H*", $plisthash );
+my $pbkdf2 = Crypt::PBKDF2->new( hash_class => 'HMACSHA1', iterations => 1000 );
+for ( my $num = 0; $num < 5000; $num++ ) {
+
+    my $hash = $pbkdf2->PBKDF2(
+        my $salt = pack( "H*", $plistsalt ),
+        my $pass = sprintf( "%04d", $num ));
+
+    if ( $match eq $hash ) {
 		print "\n\n----------------------------------\n";
   		print "|********************************|\n";
   		print "|***  Your password is: $pass  ***|\n";
   		print "|********************************|\n";
   		print "----------------------------------\n\n";
 		exit 0;
-   }
+    }
 }
 exit 1;
