@@ -20,11 +20,6 @@ _Mac OS X only! This will do NOTHING on Windows or Linux!_
 3. [App::cpanminus](http://search.cpan.org/~miyagawa/App-cpanminus-1.7040/lib/App/cpanminus.pm)
 4. [Crypt::PBKDF2](http://search.cpan.org/~arodland/Crypt-PBKDF2-0.150900/lib/Crypt/PBKDF2.pm)
 
-## Warning
-
-This project was a fun way to crack the forgotten restrictions password on my old iPod Touch. If you are a 5th grader looking to be a **xXxSooperHaxor420xXx** then you can ask your parents' permission to go back to [Disney.com](https://www.Disney.com).
-
-
 ## Instructions
 
 1. Read the section titled "Install" in this readme
