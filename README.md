@@ -4,27 +4,27 @@ Cracks the iOS restrictions passcode. It works on any iOS device, be it the iPho
 
 ## Install
 
-I've included a handy dandy install script (```install_idrc```) that checks for and installs the necessary dependencies. You may need to change the permissions of the installer in order for it to function, like so:
+I've included a handy dandy install script (```install_idrc.sh```) that checks for and installs the necessary dependencies. You may need to change the permissions of the installer in order for it to function, like so:
 ```
-cd /path/to/install_idrc
-chmod +x install_idrc
+cd /path/to/install_idrc.sh
+chmod +x install_idrc.sh
 ```
-While ```idrc``` is able to be run from anywhere, ```install_idrc``` by default installs it to /usr/local/bin so that it works as a terminal command.
+While ```idrc.pl``` is able to be run from anywhere, ```install_idrc.sh``` by default installs it to /usr/local/bin so that it works as a terminal command.
 
-## Requirements
+## Dependencies
 
 _Mac OS X only! This will do NOTHING on Windows or Linux!_
 
 1. An account of at least administrator permissions level. Must be able to use `sudo`.
-2. Xcode Command Line Tools
-3. [App::cpanminus](http://search.cpan.org/~miyagawa/App-cpanminus-1.7040/lib/App/cpanminus.pm)
-4. [Crypt::PBKDF2](http://search.cpan.org/~arodland/Crypt-PBKDF2-0.150900/lib/Crypt/PBKDF2.pm)
+2. Xcode Command Line Tools - Installed by ```install_idrc.sh```
+3. [App::cpanminus](http://search.cpan.org/~miyagawa/App-cpanminus-1.7040/lib/App/cpanminus.pm) - Installed by ```install_idrc.sh```
+4. [Crypt::PBKDF2](http://search.cpan.org/~arodland/Crypt-PBKDF2-0.150900/lib/Crypt/PBKDF2.pm) - Installed by ```install_idrc.sh```
 
 ## Instructions
 
 1. Read the section titled "Install" in this readme
 2. Sync the restricted device to iTunes
-3. open /Applications/Utilities/Terminal.app and enter `idrc`
+3. open /Applications/Utilities/Terminal.app and enter `idrc.pl`
 4. Wait ~5 seconds
 5. ???
 6. Profit!
