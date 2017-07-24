@@ -1,4 +1,4 @@
-# iDevice Restriction Cracker
+# iOS Unrestrictor
 
 Cracks the iOS restrictions passcode. It works on any iOS device, be it the iPhone 3GS or the iPad Air 2. Written in Perl 5.18, using the [Crypt::PBKDF2](https://github.com/arodland/Crypt-PBKDF2) module to decrypt the [SHA1](https://en.wikipedia.org/wiki/SHA-1) encoded password.
 
