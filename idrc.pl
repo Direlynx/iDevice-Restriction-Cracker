@@ -20,16 +20,15 @@ $plistsalt = substr($plistsalt, 0, -2);
 if (length($plisthash) != 40 || length($plistsalt) != 8) {die "Decryption Error\n"}
 
 my $match = pack("H*", $plisthash);
+my $salt = pack("H*", %plistsalt);
 my $pbkdf2 = Crypt::PBKDF2->new (hash_class => 'HMACSHA1', iterations => 1000);
-for (my $num = 0; $num < 5000; $num++) {
-   my $hash = $pbkdf2->PBKDF2(my $salt = pack("H*", $plistsalt), my $pass = sprintf("%04d", $num));
-   if ($match eq $hash) {
-		print "\n\n----------------------------------\n";
-  		print "|********************************|\n";
-  		print "|***  Your password is: $pass  ***|\n";
-  		print "|********************************|\n";
-  		print "----------------------------------\n\n";
-		exit 0;
+for (my $num = 0; $num < 10000; $num++) {
+    my $pass = sprintf("%04d", $num)
+    my $hash = $pbkdf2->PBKDF2($salt, $pass);
+    if ($match eq $hash) {
+        exec 'clear'
+        print "Your password is: $pass\n"
+        exit 0;
    }
 }
 exit 1;
