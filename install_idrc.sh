@@ -15,6 +15,6 @@ if [ $? != 0 ]; then
   cpanm Crypt::PBKDF2
 fi
 clear
-sudo curl -fsSL https://raw.githubusercontent.com/lizenas/iDevice-Restriction-Cracker/master/idrc.pl > /usr/local/bin/idrc.pl
-sudo chmod +x /usr/local/bin/idrc.pl
-echo "iDevice Restriction Cracker is installed! Now just back up your restricted device to iTunes and enter 'idrc.pl' into Terminal.app"
+sudo curl -fsSL https://raw.githubusercontent.com/lizenas/iOS-Unrestrictor/master/idrc.pl > /usr/local/bin/idrc
+sudo chmod +x /usr/local/bin/idrc
+echo "iDevice Restriction Cracker is installed! Now just back up your restricted device to iTunes and enter 'idrc' into Terminal.app"
