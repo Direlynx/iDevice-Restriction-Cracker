@@ -13,7 +13,7 @@ While ```idrc.pl``` is able to be run from anywhere, ```install_idrc.sh``` by de
 
 ## Dependencies
 
-_Mac OS X only! This will do NOTHING on Windows or Linux!_
+_Mac OS X only!_
 
 1. An account of at least administrator permissions level. Must be able to use `sudo`.
 2. Xcode Command Line Tools - Installed by ```install_idrc.sh```
